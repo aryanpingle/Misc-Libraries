@@ -1,7 +1,8 @@
-import java.awt.*;
-import javax.imageio.*;
 import java.io.*;
+import java.awt.*;
 import java.awt.image.*;
+
+import javax.imageio.*;
 
 public class C
 {
@@ -238,7 +239,7 @@ public class C
      * @return A Single Dimensional Array
      */
 
-    public static Color[] getPixelsInSDA(String imagepath)
+    public static Color[] getPixelsInSDA(String imagepath)throws IOException
     {
         BufferedImage bi = ImageIO.read(new File(imagepath));
 
@@ -266,7 +267,7 @@ public class C
      * @return A Double Dimensional Array
      */
 
-    public static Color[][] getPixelsInDDA(String imagepath)
+    public static Color[][] getPixelsInDDA(String imagepath)throws IOException
     {
         BufferedImage bi = ImageIO.read(new File(imagepath));
 
