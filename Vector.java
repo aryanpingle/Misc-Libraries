@@ -19,6 +19,12 @@ public class Vector
         this.i = i;
         this.j = j;
     }
+    
+    public Vector(double x1, double y1, double x2, double y2)
+    {
+        this.i = x2-x1;
+        this.j = y2-y1;
+    }
 
     public Vector(double i, double j, double magnitude)
     {
