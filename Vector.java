@@ -45,6 +45,60 @@ public class Vector
         setMagnitude(magnitude);
     }
     
+    /**
+    * Changes the state of the current vector object by keeping its maximum magnitude at `mag`
+    */
+    
+    Vector limitMag(double mag)
+    {
+        if(getMagnitude() > mag)
+        {
+            setMagnitude(mag);
+        }
+        
+        return this;
+    }
+
+    /**
+     * Changes the state of the current vector object by limiting its absolute `i` component at a maximum of `mag`
+     */
+    
+    Vector limitI(double mag)
+    {
+        if(Math.abs(i) > mag)
+        {
+            i = mag*i/Math.abs(i);
+        }
+
+        return this;
+    }
+
+    /**
+     * Changes the state of the current vector object by limiting its absolute `j` component at a maximum of `mag`
+     */
+    
+    Vector limitJ(double mag)
+    {
+        if(Math.abs(j) > mag)
+        {
+            j = mag*j/Math.abs(j);
+        }
+
+        return this;
+    }
+
+    /**
+     * Changes the state of the current vector object by limiting both absolute components at a maximum of `mag` each
+     */
+
+    Vector limitEach(double mag)
+    {
+        limitI(mag);
+        limitJ(mag);
+
+        return this;
+    }
+    
     /*
     * Sets the i and j components of this vector to a random number in [-factor, factor]
     */
@@ -152,8 +206,8 @@ public class Vector
     
     public Vector sub(double i, double j)
     {
-        this.i += i;
-        this.j += j;
+        this.i -= i;
+        this.j -= j;
         
         return this;
     }
