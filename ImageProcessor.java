@@ -13,10 +13,12 @@ public class ImageProcessor extends JPanel implements KeyListener, MouseListener
 {
     static int fw = 750, fh = 750;
     static boolean SAVE_MODE = false;
-    static String filepath = "images/Draw1.png";
+    static String filepath = "images/Art1.png";
 
     static int mx, my;
-    
+
+    // static Color c1 = new Color();
+
     public static void main(String[] args)
     {
         JFrame f = new JFrame();
@@ -31,11 +33,12 @@ public class ImageProcessor extends JPanel implements KeyListener, MouseListener
 
     public ImageProcessor()
     {
-        setBackground(Color.WHITE);
+        setBackground(new Color(0, 0, 0, 0));
 
         setFocusable(true);
         addKeyListener(this);
         addMouseListener(this);
+        addMouseMotionListener(this);
         requestFocus(true);
     }
     
@@ -46,7 +49,7 @@ public class ImageProcessor extends JPanel implements KeyListener, MouseListener
         
         if(SAVE_MODE)
         {
-            BufferedImage bi = new BufferedImage(fw, fh, BufferedImage.TYPE_INT_RGB);
+            BufferedImage bi = new BufferedImage(fw, fh, BufferedImage.TYPE_INT_ARGB);
             
             Graphics g2 = bi.getGraphics();
             
@@ -83,7 +86,7 @@ public class ImageProcessor extends JPanel implements KeyListener, MouseListener
 
                 // double val = f(i);
                 // double val = f(i, j);
-                
+
                 g.setColor(new Color(red, green, blue));
                 g.fillRect(i, j, 1, 1);
             }
