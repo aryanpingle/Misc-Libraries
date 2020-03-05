@@ -3,8 +3,8 @@ import java.awt.*;
 public class Vector
 {
     static double pi = Math.PI;
+    
     double i, j;
-    // j points down for positive values
     
     public static void main(String[] args)
     {
@@ -34,7 +34,7 @@ public class Vector
     }
     
     /**
-    * Creates a new vector object with direction ratios `i` and `j` with a net magnitude of `magnitude`
+    * Creates a new vector object with direction ratios <b>i</b> and <b>j</b> with a net magnitude of <b>magnitude</b>
     */
     
     public Vector(double i, double j, double magnitude)
@@ -46,7 +46,31 @@ public class Vector
     }
     
     /**
-    * Changes the state of the current vector object by keeping its maximum magnitude at `mag`
+    * Sets the <b>i</b> and <b>j</b> components of the current vector to the passed values
+    */
+    
+    public Vector set(double i, double j)
+    {
+        this.i = i;
+        this.j = j;
+
+        return this;
+    }
+
+    /**
+    * Sets the <b>i</b> and <b>j</b> components of the current vector to that of the passed value
+    */
+    
+    public Vector set(Vector v)
+    {
+        this.i = v.i;
+        this.j = v.j;
+
+        return this;
+    }
+
+    /**
+    * Changes the state of the current vector object by keeping its maximum magnitude at <b>mag</b>
     */
     
     Vector limitMag(double mag)
@@ -58,10 +82,10 @@ public class Vector
         
         return this;
     }
-
+    
     /**
-     * Changes the state of the current vector object by limiting its absolute `i` component at a maximum of `mag`
-     */
+    * Changes the state of the current vector object by limiting its absolute <b>i</b> component at a maximum of <b>mag</b>
+    */
     
     Vector limitI(double mag)
     {
@@ -69,13 +93,13 @@ public class Vector
         {
             i = mag*i/Math.abs(i);
         }
-
+        
         return this;
     }
-
+    
     /**
-     * Changes the state of the current vector object by limiting its absolute `j` component at a maximum of `mag`
-     */
+    * Changes the state of the current vector object by limiting its absolute <b>j</b> component at a maximum of <b>mag</b>
+    */
     
     Vector limitJ(double mag)
     {
@@ -83,19 +107,19 @@ public class Vector
         {
             j = mag*j/Math.abs(j);
         }
-
+        
         return this;
     }
-
+    
     /**
-     * Changes the state of the current vector object by limiting both absolute components at a maximum of `mag` each
-     */
-
+    * Changes the state of the current vector object by limiting both absolute components at a maximum of <b>mag</b> each
+    */
+    
     Vector limitEach(double mag)
     {
         limitI(mag);
         limitJ(mag);
-
+        
         return this;
     }
     
@@ -162,7 +186,7 @@ public class Vector
     
     /**
     * Changes the state of the current vector object and returns its address
-    * @return The current vector object after adding `v` to it
+    * @return The current vector object after adding <b>v</b> to it
     */
     
     public Vector add(Vector v)
@@ -175,7 +199,7 @@ public class Vector
     
     /**
     * Changes the state of the current vector object and returns its address
-    * @return The current vector object after subtracting `v` from it
+    * @return The current vector object after subtracting <b>v</b> from it
     */
     
     public Vector sub(Vector v)
@@ -188,7 +212,7 @@ public class Vector
     
     /**
     * Changes the state of the current vector object and returns its address
-    * @return The current vector object after adding `v` to it
+    * @return The current vector object after adding <b>v</b> to it
     */
     
     public Vector add(double i, double j)
@@ -201,7 +225,7 @@ public class Vector
     
     /**
     * Changes the state of the current vector object and returns its address
-    * @return The current vector object after subtracting `v` from it
+    * @return The current vector object after subtracting <b>v</b> from it
     */
     
     public Vector sub(double i, double j)
@@ -264,8 +288,8 @@ public class Vector
     }
     
     /**
-    * Returns the component of the current vetor object along the vector `v`
-    * @return A new vector object along the vector `v`
+    * Returns the component of the current vetor object along the vector <b>v</b>
+    * @return A new vector object along the vector <b>v</b>
     */
     
     public Vector along(Vector v)
