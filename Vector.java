@@ -1,6 +1,8 @@
 import java.awt.*;
+import java.io.Serializable;
 
-public class Vector
+@SuppressWarnings("serial")
+public class Vector implements Serializable
 {
     static double pi = Math.PI;
     
@@ -8,7 +10,7 @@ public class Vector
     
     public static void main(String[] args)
     {
-        System.out.println(new Vector(-1, 1).rotate(-pi/2));
+        Main.main(args);
     }
     
     public Vector()
