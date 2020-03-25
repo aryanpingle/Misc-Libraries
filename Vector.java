@@ -330,6 +330,23 @@ public class Vector implements Serializable
         
         return this;
     }
+
+    /**
+     * Checks if the two vectors are equal to a limit of 0.00001 for both components
+     */
+
+    public boolean equals(Vector v)
+    {
+        if(p.sign(v.i) == p.sign(i) && p.sign(v.j) == p.sign(j))
+        {
+            if(Math.abs(v.i-i) <= 0.00001 && Math.abs(v.i-i) <= 0.00001)
+            {
+                return true;
+            }
+        }
+
+        return false;
+    }
     
     public Vector clone()
     {
